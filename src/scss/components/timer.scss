@@ -1,0 +1,116 @@
+@import "../default/default_variables.scss";
+
+$thisBGColor: #252525;
+$thisNeonPink: #1ffc5e;
+$calendar-icon: url("../../assets/img/svg/monthly-calendar-svgrepo-com.svg");
+$time-icon: url("../../assets/img/svg/782c18b8bfa2674798e6ec005214f85e.svg");
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 500px;
+
+
+  background-color: $thisBGColor;
+
+  // default settings
+
+  font-family: $OldFontFamily;
+  color: $thisNeonPink;
+  text-shadow: $thisNeonPink 1px 0 10px;
+
+  // ----------------
+}
+
+.timer-output {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 60px;
+  &__number {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+
+    border-width: 2px;
+    border-style: inset;
+    border-top-color: rgb(118, 118, 118);
+    border-left-color: rgb(118, 118, 118);
+    border-right-color: rgb(133, 133, 133);
+    border-bottom-color: rgb(133, 133, 133);
+
+    border-image: initial;
+    margin: 5px;
+    span {
+      font-size: 0.2em;
+    }
+  }
+}
+.timer-timeset {
+  display: flex;
+  flex-direction: column;
+  &__date {
+    cursor: pointer;
+    background-color: $thisBGColor;
+    font-size: 30px;
+    margin: 5px;
+    &:focus {
+      outline: none !important;
+    }
+    &::-webkit {
+      &-datetime-edit {
+        padding: 20px;
+        color: $thisNeonPink;
+        text-shadow: $thisNeonPink 1px 0 10px;
+      }
+      &-calendar-picker-indicator {
+        background-color: #1ffc5e59;
+        color: $thisNeonPink;
+        background-image: $calendar-icon;
+        margin-right: 20px;
+        padding: 5px;
+        box-shadow: inset 0 0 3px 1px $thisNeonPink, 0 0 20px 2px $thisNeonPink;
+      }
+    }
+  }
+
+  &__time {
+    background-color: $thisBGColor;
+    color: $thisNeonPink;
+    text-shadow: $thisNeonPink 1px 0 10px;
+    padding: 20px;
+    margin-right: 5px;
+    font-size: 30px;
+    cursor: pointer;
+    outline: none;
+    &::-webkit-calendar-picker-indicator {
+      background-color: #1ffc5e59;
+      color: $thisNeonPink;
+      background-image: $time-icon;
+      background-size: cover;
+      box-shadow: inset 0 0 3px 1px $thisNeonPink, 0 0 20px 2px $thisNeonPink;
+      cursor: pointer;
+    }
+  }
+
+  &__submit {
+    align-self: flex-end;
+    width: 176.5px;
+    font-size: 30px;
+    text-shadow: $thisNeonPink 1px 0 10px;
+    padding: 5px;
+    margin: 5px;
+
+    border-width: 2px;
+    border-style: outset;
+    border-top-color: rgb(118, 118, 118);
+    border-left-color: rgb(118, 118, 118);
+    border-right-color: rgb(133, 133, 133);
+    border-bottom-color: rgb(133, 133, 133);
+  }
+}
